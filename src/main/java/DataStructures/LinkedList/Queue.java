@@ -42,6 +42,7 @@ public class Queue <T> {
         size = 0;
     }
 
+    // Prints queue
     public void inspectQueue() {
         MyNode<T> n = front;
         while (n != null) {
@@ -56,20 +57,4 @@ public class Queue <T> {
         return this.size;
     }
 
-    public void printQueue() {
-
-        MyNode<T> currentNode;
-
-        for (int i = 0; i < size; i++) {
-            if (i < size - 1) {
-                currentNode = this.front;
-                System.out.print(currentNode.getData() + ", ");
-                front = front.getNext();
-            } else {
-                currentNode = this.front;
-                System.out.print(currentNode.getData());
-                front = front.getNext();
-            }
-        }
-    }
 }
