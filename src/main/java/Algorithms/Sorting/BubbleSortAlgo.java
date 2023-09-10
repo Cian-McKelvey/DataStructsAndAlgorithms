@@ -3,20 +3,18 @@ package Algorithms.Sorting;
 import java.util.ArrayList;
 import java.util.List;
 
-public class InsertionSortAlgo {
+public class BubbleSortAlgo {
 
-    public static void insertionSortAlgo(List<Integer> arr) {
+    public static void bubbleSortAlgo (List<Integer> arr) {
         int x = arr.size();
-        for (int i = 0; i < x; i++) {
-            int key = arr.get(i);
-            int j = i - 1;
-
-            while (j >= 0 && arr.get(j) > key) {
-                arr.set(j+1, arr.get(j));
-                j = j - 1;
+        for (int i = 0; i < x - 1; i++) {
+            for (int j = 0; j < x - i - 1; j++) {
+                if (arr.get(j) > arr.get(j+1)) {
+                    int temp = arr.get(j);
+                    arr.set(j, arr.get(j+1));
+                    arr.set(j+1, temp);
+                }
             }
-
-            arr.set(j+1, key);
         }
     }
 
@@ -30,7 +28,7 @@ public class InsertionSortAlgo {
 
         System.out.println(testList);
 
-        insertionSortAlgo(testList);
+        bubbleSortAlgo(testList);
 
         System.out.println(testList);
     }
